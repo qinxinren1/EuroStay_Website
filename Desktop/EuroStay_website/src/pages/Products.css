@@ -1,0 +1,303 @@
+.products-page {
+  width: 100%;
+}
+
+.products-hero {
+  background-color: var(--color-bg-base);
+  padding: 8.0rem 2.0rem;
+  color: var(--color-text-default);
+  text-align: center;
+}
+
+.page-title {
+  font-size: 4.8rem;
+  font-weight: bold;
+  margin-bottom: 2.0rem;
+  color: var(--color-purple-primary);
+}
+
+.page-subtitle {
+  font-size: 2.0rem;
+  opacity: 0.9;
+}
+
+.product-section {
+  padding: 8.0rem 2.0rem;
+  background-color: var(--color-white);
+}
+
+.product-content {
+  max-width: 90.0rem;
+  margin: 0 auto;
+}
+
+.product-info h2 {
+  font-size: 3.2rem;
+  color: var(--color-purple-primary);
+  margin-bottom: 2.0rem;
+}
+
+.product-info p {
+  font-size: 1.8rem;
+  color: var(--color-text-unselected);
+  line-height: 1.8;
+  margin-bottom: 3.0rem;
+}
+
+.product-info h3 {
+  font-size: 2.4rem;
+  color: var(--color-purple-primary);
+  margin-top: 4.0rem;
+  margin-bottom: 2.0rem;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+.feature-list li {
+  font-size: 1.6rem;
+  color: var(--color-text-unselected);
+  line-height: 1.8;
+  padding: 1.5rem 0;
+  padding-left: 3.0rem;
+  position: relative;
+}
+
+.feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-purple-primary);
+  font-weight: bold;
+  font-size: 2.0rem;
+}
+
+.feature-list strong {
+  color: var(--color-text-default);
+}
+
+.guide-section {
+  background-color: var(--color-white);
+  padding: 8.0rem 2.0rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 4.8rem;
+  font-weight: bold;
+  color: var(--color-purple-primary);
+  margin-bottom: 5.0rem;
+}
+
+.guide-steps {
+  max-width: 90.0rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.0rem;
+}
+
+.guide-step {
+  background-color: var(--color-white);
+  border-radius: 1.2rem;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  border: 0.1rem solid #f0f0f0;
+}
+
+.guide-step:hover {
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+}
+
+.step-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 3.0rem;
+  align-items: center;
+  padding: 3.0rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.step-header:hover {
+  background-color: #fafafa;
+}
+
+.step-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toggle-icon {
+  font-size: 2.0rem;
+  color: var(--color-purple-primary);
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.toggle-icon.expanded {
+  transform: rotate(180deg);
+}
+
+.step-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 3.0rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3.0rem;
+  align-items: flex-start;
+}
+
+.step-details.expanded {
+  max-height: 100.0rem;
+  padding: 0 3.0rem 3.0rem 3.0rem;
+}
+
+.step-description {
+  margin-bottom: 2.0rem;
+}
+
+.step-number {
+  width: 6.0rem;
+  height: 6.0rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--color-white);
+  flex-shrink: 0;
+}
+
+.step-number.purple {
+  background-color: var(--color-purple-primary);
+}
+
+.step-number.yellow {
+  background-color: var(--color-yellow-primary);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-content h3 {
+  font-size: 2.4rem;
+  color: var(--color-text-default);
+  margin: 0;
+}
+
+.step-description p {
+  font-size: 1.6rem;
+  color: var(--color-text-unselected);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.step-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-image .image-placeholder {
+  width: 20.0rem;
+  height: 15.0rem;
+  background: linear-gradient(135deg, var(--color-purple-secondary), var(--color-yellow-secondary));
+  border-radius: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-default);
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 1.0rem;
+}
+
+.step-image img {
+  width: 20.0rem;
+  height: 15.0rem;
+  object-fit: cover;
+  border-radius: 1.2rem;
+}
+
+.tips-section {
+  padding: 8.0rem 2.0rem;
+  background-color: var(--color-white);
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25.0rem, 1fr));
+  gap: 3.0rem;
+  max-width: 100.0rem;
+  margin: 0 auto;
+}
+
+.tip-card {
+  background-color: var(--color-white);
+  padding: 3.0rem;
+  border-radius: 1.2rem;
+  border-left: 0.4rem solid var(--color-purple-primary);
+}
+
+.tip-card h4 {
+  font-size: 2.0rem;
+  color: var(--color-text-default);
+  margin-bottom: 1.5rem;
+}
+
+.tip-card p {
+  font-size: 1.6rem;
+  color: var(--color-text-unselected);
+  line-height: 1.6;
+}
+
+@media (max-width: 76.8rem) {
+  .page-title {
+    font-size: 3.6rem;
+  }
+
+  .page-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .step-header {
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+  }
+
+  .step-details {
+    grid-template-columns: 1fr;
+    gap: 2.0rem;
+  }
+
+  .step-number {
+    width: 5.0rem;
+    height: 5.0rem;
+    font-size: 2.4rem;
+  }
+
+  .step-content h3 {
+    font-size: 2.0rem;
+  }
+
+  .step-image {
+    margin: 0 auto;
+  }
+
+  .step-image .image-placeholder,
+  .step-image img {
+    width: 100%;
+    max-width: 30.0rem;
+    height: 20.0rem;
+  }
+}
