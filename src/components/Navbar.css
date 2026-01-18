@@ -1,0 +1,129 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-white);
+  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+.navbar-container {
+  max-width: 120rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 7rem;
+}
+
+.navbar-logo {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--color-purple-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: var(--color-purple-secondary);
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-link {
+  color: var(--color-text-unselected);
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-link:hover {
+  color: var(--color-purple-primary);
+}
+
+.navbar-link.active {
+  color: var(--color-purple-primary);
+}
+
+.navbar-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.8rem;
+  left: 0;
+  right: 0;
+  height: 0.2rem;
+  background-color: var(--color-purple-primary);
+}
+
+.language-toggle {
+  background-color: var(--color-purple-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+}
+
+.language-toggle:hover {
+  background-color: var(--color-purple-secondary);
+  color: var(--color-text-default);
+  transform: translateY(-0.2rem);
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-toggle span {
+  width: 2.5rem;
+  height: 0.3rem;
+  background-color: var(--color-text-default);
+  margin: 0.3rem 0;
+  transition: 0.3s;
+}
+
+@media (max-width: 76.8rem) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-menu.active {
+    transform: translateX(0);
+  }
+
+  .navbar-link.active::after {
+    display: none;
+  }
+}
