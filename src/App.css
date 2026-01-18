@@ -2,9 +2,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .main-content {
   flex: 1;
-  padding-top: 8rem; /* 为固定导航栏留出空间 */
 }

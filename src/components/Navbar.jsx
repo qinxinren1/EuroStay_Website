@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          EuroStay
+          <img src="/images/globe/logo.png" alt="EuroStay Logo" className="navbar-logo-img" />
         </Link>
         <button
           className="navbar-toggle"

@@ -7,8 +7,8 @@ export const translations = {
       about: '关于我们',
     },
     home: {
-      heroTitle: '欢迎来到 EuroStay',
-      heroSubtitle: '体验独特的换宿旅行，连接世界各地的旅行者',
+      heroTitle: 'EuroStay 世界不贵',
+      heroSubtitle: '连接世界各地的旅行者，探索生活的无限可能性',
       downloadIOS: '下载 iOS 应用',
       downloadAndroid: '下载 Android 应用',
       learnMore: '了解产品详情 →',

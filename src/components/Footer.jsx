@@ -11,11 +11,13 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-top">
-        <div className="footer-section footer-logo">
+        <div className="footer-section footer-left">
           <div className="footer-logo-container">
-            <div className="footer-logo-placeholder">
-              <span>{language === 'zh' ? 'Logo' : 'Logo'}</span>
-            </div>
+            <img 
+              src="/images/globe/logo_footer.png" 
+              alt="EuroStay Logo" 
+              className="footer-logo-image"
+            />
           </div>
           <p className="footer-description">{t.description}</p>
         </div>

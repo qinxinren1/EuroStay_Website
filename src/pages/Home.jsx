@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 import { useCountUp } from '../hooks/useCountUp'
+import Globe3D from '../components/Globe3D'
 import './Home.css'
 
 // 数字递增动画组件
@@ -125,7 +126,13 @@ const Home = () => {
       <section className="hero">
         <div className="hero-main">
           <div className="hero-content">
-            <h1 className="hero-title">{t.heroTitle}</h1>
+            <div className="hero-title-wrapper">
+              <div className="hero-title-line">
+                <span className="hero-title-word">EURO</span>
+                <span className="hero-title-tag">世界不贵</span>
+              </div>
+              <div className="hero-title-word hero-title-second">STAY</div>
+            </div>
             <p className="hero-subtitle">{t.heroSubtitle}</p>
             <div className="hero-buttons">
               <a
@@ -156,9 +163,7 @@ const Home = () => {
             </div>
           </div>
           <div className="hero-image">
-            <div className="hero-placeholder">
-              <span>{language === 'zh' ? '产品展示图' : 'Product Showcase'}</span>
-            </div>
+            <Globe3D stories={[]} />
           </div>
         </div>
       </section>

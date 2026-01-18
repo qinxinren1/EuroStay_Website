@@ -15,19 +15,60 @@
   gap: 6.0rem;
   align-items: center;
   margin-bottom: 6.0rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   gap: 3.0rem;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-title {
-  font-size: 4.8rem;
-  font-weight: bold;
-  color: var(--color-text-default);
+.hero-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 3rem;
+}
+
+.hero-title-line {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-title-word {
+  font-size: 10rem;
+  font-weight: 900;
   line-height: 1.2;
+  position: relative;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Comfortaa', 'Fredoka One', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  color: var(--color-text-default);
+  filter: drop-shadow(0 0.2rem 0.4rem rgba(0, 0, 0, 0.1));
+  -webkit-text-stroke: 0.05rem var(--color-text-default);
+}
+
+.hero-title-second {
+  margin-top: -0.5rem;
+}
+
+.hero-title-tag {
+  display: inline-block;
+  background-color: var(--color-purple-secondary);
+  color: var(--color-white);
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: 'Comfortaa', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 0.2rem 0.4rem rgba(122, 99, 199, 0.2);
 }
 
 .hero-subtitle {
@@ -40,6 +81,7 @@
   display: flex;
   gap: 2.0rem;
   flex-wrap: wrap;
+  margin-top: 5rem;
 }
 
 .btn {
@@ -96,6 +138,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+}
+
+.hero-image .globe-3d-wrapper {
+  width: 100%;
+  height: 35rem;
+  max-height: 35rem;
+  background: transparent !important;
+  overflow: visible;
+}
+
+.hero-image .globe-3d-container {
+  width: 100%;
+  height: 100%;
+  max-width: 35rem;
+  max-height: 35rem;
+  margin: 0 auto;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  overflow: visible;
+}
+
+.hero-image .globe-3d-container canvas {
+  background: transparent !important;
 }
 
 .hero-placeholder {
@@ -114,7 +186,6 @@
 .features {
   background-color: var(--color-white);
   padding: 8.0rem 2.0rem;
-  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.05);
 }
 
 .container {
@@ -139,14 +210,12 @@
 }
 
 .feature-card {
-  background-color: var(--color-white);
-  padding: 4.0rem 3.0rem;
-  border-radius: 1.2rem;
+  background-color: transparent;
+  padding: 4.0rem 0;
   display: flex;
   align-items: center;
   gap: 4.0rem;
   width: 100%;
-  box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
 }
 
 .feature-card:nth-child(odd) {
@@ -617,11 +686,15 @@
 }
 
 .vision-tagline {
-  font-size: 1.8rem;
-  color: var(--color-text-default);
-  max-width: 80.0rem;
+  font-size: 2.2rem;
+  color: var(--color-purple-secondary);
+  max-width: 90.0rem;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.8;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 0 2.0rem;
+  text-align: center;
 }
 
 .vision-description {
@@ -759,7 +832,7 @@
 
 .vision-cta p {
   font-size: 1.6rem;
-  color: var(--color-text-default);
+  color: var(--color-purple-secondary);
   margin-bottom: 2.0rem;
   text-align: center;
 }

@@ -17,13 +17,6 @@ const Products = () => {
 
   return (
     <div className="products-page">
-      <section className="products-hero">
-        <div className="container">
-          <h1 className="page-title">{t.title}</h1>
-          <p className="page-subtitle">{t.subtitle}</p>
-        </div>
-      </section>
-
       <section className="product-section">
         <div className="container">
           <div className="product-content">
@@ -33,16 +26,20 @@ const Products = () => {
               <h3>{t.coreFeaturesTitle}</h3>
               <ul className="feature-list">
                 <li>
-                  <strong>{t.feature1.split(' - ')[0]}</strong>{t.feature1.includes(' - ') ? ' - ' + t.feature1.split(' - ')[1] : ''}
+                  <strong>{t.feature1.split(' - ')[0]}</strong>
+                  <span>{t.feature1.includes(' - ') ? t.feature1.split(' - ')[1] : ''}</span>
                 </li>
                 <li>
-                  <strong>{t.feature2.split(' - ')[0]}</strong>{t.feature2.includes(' - ') ? ' - ' + t.feature2.split(' - ')[1] : ''}
+                  <strong>{t.feature2.split(' - ')[0]}</strong>
+                  <span>{t.feature2.includes(' - ') ? t.feature2.split(' - ')[1] : ''}</span>
                 </li>
                 <li>
-                  <strong>{t.feature3.split(' - ')[0]}</strong>{t.feature3.includes(' - ') ? ' - ' + t.feature3.split(' - ')[1] : ''}
+                  <strong>{t.feature3.split(' - ')[0]}</strong>
+                  <span>{t.feature3.includes(' - ') ? t.feature3.split(' - ')[1] : ''}</span>
                 </li>
                 <li>
-                  <strong>{t.feature4.split(' - ')[0]}</strong>{t.feature4.includes(' - ') ? ' - ' + t.feature4.split(' - ')[1] : ''}
+                  <strong>{t.feature4.split(' - ')[0]}</strong>
+                  <span>{t.feature4.includes(' - ') ? t.feature4.split(' - ')[1] : ''}</span>
                 </li>
               </ul>
             </div>

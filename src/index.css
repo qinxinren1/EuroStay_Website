@@ -6,6 +6,8 @@
 
 html {
   font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden;
+  width: 100%;
 }
 
 :root {
@@ -30,8 +32,12 @@ body {
   color: var(--color-text-default);
   background-color: var(--color-white);
   font-size: 1.6rem; /* 16px 基础字体 */
+  overflow-x: hidden;
+  width: 100%;
 }
 
 #root {
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
