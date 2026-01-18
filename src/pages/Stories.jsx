@@ -1,8 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
+import { useCountUp } from '../hooks/useCountUp'
 import Globe3D from '../components/Globe3D'
 import './Stories.css'
+
+// 数字递增动画组件
+const CountUpNumber = ({ value, duration = 2000 }) => {
+  const elementRef = useRef(null)
+  const { value: displayValue } = useCountUp(value, duration, true, elementRef)
+  return <span ref={elementRef}>{displayValue}</span>
+}
 
 const Stories = () => {
   const { language } = useLanguage()
@@ -135,15 +143,21 @@ const Stories = () => {
         </div>
         <div className="stories-hero-stats">
           <div className="stat-column">
-            <div className="stat-number">{t.stat1Number}</div>
+            <div className="stat-number">
+              <CountUpNumber value={t.stat1Number} duration={2000} />
+            </div>
             <div className="stat-label">{t.stat1Label}</div>
           </div>
           <div className="stat-column">
-            <div className="stat-number">{t.stat2Number}</div>
+            <div className="stat-number">
+              <CountUpNumber value={t.stat2Number} duration={2000} />
+            </div>
             <div className="stat-label">{t.stat2Label}</div>
           </div>
           <div className="stat-column">
-            <div className="stat-number">{t.stat3Number}</div>
+            <div className="stat-number">
+              <CountUpNumber value={t.stat3Number} duration={2000} />
+            </div>
             <div className="stat-label">{t.stat3Label}</div>
           </div>
         </div>
@@ -152,6 +166,7 @@ const Stories = () => {
       <section className="stories-section">
         <div className="container">
           <h2 className="section-title">{t.userStoriesTitle}</h2>
+          <p className="stories-tagline">{t.storiesTagline}</p>
           
           <div className="stories-map-gallery-layout">
             <div className="stories-map-container">
@@ -234,6 +249,7 @@ const Stories = () => {
       <section className="activities-section">
         <div className="container">
           <h2 className="section-title">{t.activityHistoryTitle}</h2>
+          <p className="activity-history-intro">{t.activityHistoryIntro}</p>
           <div className="activities-timeline">
             {activities.map((activity) => (
               <div key={activity.id} className={`activity-item activity-${activity.gradient}`}>

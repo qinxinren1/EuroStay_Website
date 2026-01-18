@@ -241,6 +241,172 @@
   color: var(--color-text-unselected);
 }
 
+.feature-reviews {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.review-cards-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 45.0rem;
+  padding: 2.0rem;
+  box-sizing: border-box;
+}
+
+.review-card {
+  position: absolute;
+  width: 95%;
+  max-width: 42.0rem;
+  background-color: var(--color-white);
+  border-radius: 1.2rem;
+  padding: 2.5rem;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform-origin: center center;
+  animation: popUp 0.6s ease-out forwards;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 0.1rem solid rgba(122, 99, 199, 0.1);
+  cursor: pointer;
+}
+
+.review-card:hover {
+  z-index: 10 !important;
+  box-shadow: 0 1.2rem 2.4rem rgba(122, 99, 199, 0.25);
+}
+
+.review-card-1:hover {
+  transform: translateX(-50%) translateY(-1.5rem) rotate(-1deg) scale(1.05) !important;
+}
+
+.review-card-2:hover {
+  transform: translateX(-50%) translateY(-0.3rem) rotate(1deg) scale(1.05) !important;
+}
+
+.review-card-3:hover {
+  transform: translateX(-50%) translateY(0.7rem) rotate(0deg) scale(1.05) !important;
+}
+
+.review-card-1 {
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%) translateY(3.0rem) rotate(-3deg) scale(0.9);
+  z-index: 3;
+  animation: popUp1 0.6s ease-out 0.2s forwards;
+}
+
+.review-card-2 {
+  top: 32%;
+  left: 50%;
+  transform: translateX(-50%) translateY(3.0rem) rotate(2deg) scale(0.9);
+  z-index: 2;
+  animation: popUp2 0.6s ease-out 0.4s forwards;
+}
+
+.review-card-3 {
+  top: 64%;
+  left: 50%;
+  transform: translateX(-50%) translateY(3.0rem) rotate(-1deg) scale(0.9);
+  z-index: 1;
+  animation: popUp3 0.6s ease-out 0.6s forwards;
+}
+
+@keyframes popUp1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(3.0rem) rotate(-3deg) scale(0.9);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(-0.5rem) rotate(-3deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) rotate(-3deg) scale(1);
+  }
+}
+
+@keyframes popUp2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(3.0rem) rotate(2deg) scale(0.9);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(0.2rem) rotate(2deg) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0.5rem) rotate(2deg) scale(0.97);
+  }
+}
+
+@keyframes popUp3 {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(3.0rem) rotate(-1deg) scale(0.9);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(1.0rem) rotate(-1deg) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(1.2rem) rotate(-1deg) scale(0.94);
+  }
+}
+
+.review-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.review-avatar {
+  width: 4.0rem;
+  height: 4.0rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-purple-primary), var(--color-purple-secondary));
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.review-author {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.review-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text-default);
+}
+
+.review-rating {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  color: var(--color-yellow-primary);
+}
+
+.review-content {
+  font-size: 1.4rem;
+  color: var(--color-text-unselected);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .feature-phone-gallery {
   position: relative;
   display: flex;
@@ -945,6 +1111,52 @@
     max-width: 40.0rem;
     height: 20.0rem;
     margin: 0 auto 2.0rem;
+  }
+
+  .feature-reviews {
+    height: auto;
+    min-height: 38.0rem;
+  }
+
+  .review-cards-container {
+    min-height: 38.0rem;
+    padding: 1.5rem;
+  }
+
+  .review-card {
+    width: 95%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .review-card-1 {
+    top: 0%;
+  }
+
+  .review-card-2 {
+    top: 30%;
+  }
+
+  .review-card-3 {
+    top: 60%;
+  }
+
+  .review-avatar {
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
+
+  .review-name {
+    font-size: 1.4rem;
+  }
+
+  .review-rating {
+    font-size: 1.1rem;
+  }
+
+  .review-content {
+    font-size: 1.3rem;
   }
 
   .feature-phone-gallery {

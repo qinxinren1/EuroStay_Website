@@ -251,9 +251,44 @@ const Home = () => {
               </div>
             </div>
             <div className="feature-card">
-              <div className="feature-image">
-                <div className="feature-image-placeholder">
-                  <span>{language === 'zh' ? '图片 3' : 'Image 3'}</span>
+              <div className="feature-image feature-reviews">
+                <div className="review-cards-container">
+                  <div className="review-card review-card-1">
+                    <div className="review-card-header">
+                      <div className="review-avatar">张</div>
+                      <div className="review-author">
+                        <div className="review-name">{language === 'zh' ? '张小明' : 'Zhang Xiaoming'}</div>
+                        <div className="review-rating">⭐⭐⭐⭐⭐</div>
+                      </div>
+                    </div>
+                    <div className="review-content">
+                      {language === 'zh' ? '通过EuroStay找到了阿姆斯特丹的换宿，体验非常棒！' : 'Found homestay in Amsterdam through EuroStay, amazing experience!'}
+                    </div>
+                  </div>
+                  <div className="review-card review-card-2">
+                    <div className="review-card-header">
+                      <div className="review-avatar">李</div>
+                      <div className="review-author">
+                        <div className="review-name">{language === 'zh' ? '李小红' : 'Li Xiaohong'}</div>
+                        <div className="review-rating">⭐⭐⭐⭐⭐</div>
+                      </div>
+                    </div>
+                    <div className="review-content">
+                      {language === 'zh' ? '在巴黎的换宿让我深入体验了当地文化，强烈推荐！' : 'Homestay in Paris let me deeply experience local culture, highly recommend!'}
+                    </div>
+                  </div>
+                  <div className="review-card review-card-3">
+                    <div className="review-card-header">
+                      <div className="review-avatar">王</div>
+                      <div className="review-author">
+                        <div className="review-name">{language === 'zh' ? '王小华' : 'Wang Xiaohua'}</div>
+                        <div className="review-rating">⭐⭐⭐⭐⭐</div>
+                      </div>
+                    </div>
+                    <div className="review-content">
+                      {language === 'zh' ? '安全可靠，评价系统帮助我做出了最佳选择。' : 'Safe and reliable, review system helped me make the best choice.'}
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="feature-card-content">
