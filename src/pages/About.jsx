@@ -150,6 +150,14 @@ const About = () => {
               <p className="team-member-role">{t.teamMember3Role}</p>
               <p className="team-member-desc">{t.teamMember3Desc}</p>
             </div>
+            <div className="team-member">
+              <div className="team-member-avatar">
+                <span>👤</span>
+              </div>
+              <h3 className="team-member-name">{t.teamMember4Name}</h3>
+              <p className="team-member-role">{t.teamMember4Role}</p>
+              <p className="team-member-desc">{t.teamMember4Desc}</p>
+            </div>
           </div>
         </div>
       </section>
