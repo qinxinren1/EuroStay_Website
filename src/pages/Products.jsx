@@ -7,6 +7,7 @@ const Products = () => {
   const { language } = useLanguage()
   const t = translations[language].products
   const [expandedSteps, setExpandedSteps] = useState({})
+  const [expandedQA, setExpandedQA] = useState({})
 
   const toggleStep = (stepNumber) => {
     setExpandedSteps(prev => ({
@@ -15,33 +16,34 @@ const Products = () => {
     }))
   }
 
+  const toggleQA = (qaNumber) => {
+    setExpandedQA(prev => ({
+      ...prev,
+      [qaNumber]: !prev[qaNumber]
+    }))
+  }
+
   return (
     <div className="products-page">
-      <section className="product-section">
+      <section className="tips-section">
         <div className="container">
-          <div className="product-content">
-            <div className="product-info">
-              <h2>{t.whatIsTitle}</h2>
-              <p>{t.whatIsDesc}</p>
-              <h3>{t.coreFeaturesTitle}</h3>
-              <ul className="feature-list">
-                <li>
-                  <strong>{t.feature1.split(' - ')[0]}</strong>
-                  <span>{t.feature1.includes(' - ') ? t.feature1.split(' - ')[1] : ''}</span>
-                </li>
-                <li>
-                  <strong>{t.feature2.split(' - ')[0]}</strong>
-                  <span>{t.feature2.includes(' - ') ? t.feature2.split(' - ')[1] : ''}</span>
-                </li>
-                <li>
-                  <strong>{t.feature3.split(' - ')[0]}</strong>
-                  <span>{t.feature3.includes(' - ') ? t.feature3.split(' - ')[1] : ''}</span>
-                </li>
-                <li>
-                  <strong>{t.feature4.split(' - ')[0]}</strong>
-                  <span>{t.feature4.includes(' - ') ? t.feature4.split(' - ')[1] : ''}</span>
-                </li>
-              </ul>
+          <h2 className="section-title">{t.tipsTitle}</h2>
+          <div className="tips-grid">
+            <div className="tip-card">
+              <h4>{t.tip1Title}</h4>
+              <p>{t.tip1Desc}</p>
+            </div>
+            <div className="tip-card">
+              <h4>{t.tip2Title}</h4>
+              <p>{t.tip2Desc}</p>
+            </div>
+            <div className="tip-card">
+              <h4>{t.tip3Title}</h4>
+              <p>{t.tip3Desc}</p>
+            </div>
+            <div className="tip-card">
+              <h4>{t.tip4Title}</h4>
+              <p>{t.tip4Desc}</p>
             </div>
           </div>
         </div>
@@ -181,25 +183,45 @@ const Products = () => {
         </div>
       </section>
 
-      <section className="tips-section">
+      <section className="qa-section">
         <div className="container">
-          <h2 className="section-title">{t.tipsTitle}</h2>
-          <div className="tips-grid">
-            <div className="tip-card">
-              <h4>{t.tip1Title}</h4>
-              <p>{t.tip1Desc}</p>
+          <h2 className="section-title">{t.qaTitle}</h2>
+          <div className="qa-list">
+            <div className={`qa-item ${expandedQA[1] ? 'expanded' : ''}`}>
+              <div className="qa-question" onClick={() => toggleQA(1)}>
+                <h3>{t.qa1Question}</h3>
+                <span className={`qa-toggle ${expandedQA[1] ? 'expanded' : ''}`}>▼</span>
+              </div>
+              <div className={`qa-answer ${expandedQA[1] ? 'expanded' : ''}`}>
+                <p>{t.qa1Answer}</p>
+              </div>
             </div>
-            <div className="tip-card">
-              <h4>{t.tip2Title}</h4>
-              <p>{t.tip2Desc}</p>
+            <div className={`qa-item ${expandedQA[2] ? 'expanded' : ''}`}>
+              <div className="qa-question" onClick={() => toggleQA(2)}>
+                <h3>{t.qa2Question}</h3>
+                <span className={`qa-toggle ${expandedQA[2] ? 'expanded' : ''}`}>▼</span>
+              </div>
+              <div className={`qa-answer ${expandedQA[2] ? 'expanded' : ''}`}>
+                <p>{t.qa2Answer}</p>
+              </div>
             </div>
-            <div className="tip-card">
-              <h4>{t.tip3Title}</h4>
-              <p>{t.tip3Desc}</p>
+            <div className={`qa-item ${expandedQA[3] ? 'expanded' : ''}`}>
+              <div className="qa-question" onClick={() => toggleQA(3)}>
+                <h3>{t.qa3Question}</h3>
+                <span className={`qa-toggle ${expandedQA[3] ? 'expanded' : ''}`}>▼</span>
+              </div>
+              <div className={`qa-answer ${expandedQA[3] ? 'expanded' : ''}`}>
+                <p>{t.qa3Answer}</p>
+              </div>
             </div>
-            <div className="tip-card">
-              <h4>{t.tip4Title}</h4>
-              <p>{t.tip4Desc}</p>
+            <div className={`qa-item ${expandedQA[4] ? 'expanded' : ''}`}>
+              <div className="qa-question" onClick={() => toggleQA(4)}>
+                <h3>{t.qa4Question}</h3>
+                <span className={`qa-toggle ${expandedQA[4] ? 'expanded' : ''}`}>▼</span>
+              </div>
+              <div className={`qa-answer ${expandedQA[4] ? 'expanded' : ''}`}>
+                <p>{t.qa4Answer}</p>
+              </div>
             </div>
           </div>
         </div>

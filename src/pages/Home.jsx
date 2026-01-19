@@ -128,10 +128,13 @@ const Home = () => {
           <div className="hero-content">
             <div className="hero-title-wrapper">
               <div className="hero-title-line">
-                <span className="hero-title-word">EURO</span>
+                <img 
+                  src="/images/globe/title.png" 
+                  alt="EURO STAY" 
+                  className="hero-title-image"
+                />
                 <span className="hero-title-tag">世界不贵</span>
               </div>
-              <div className="hero-title-word hero-title-second">STAY</div>
             </div>
             <p className="hero-subtitle">{t.heroSubtitle}</p>
             <div className="hero-buttons">
@@ -193,6 +196,36 @@ const Home = () => {
             <CountUpNumber value="30+" duration={1500} />
           </div>
           <div className="stat-label">{language === 'zh' ? '覆盖国家' : 'Countries Covered'}</div>
+        </div>
+      </section>
+
+      <section className="product-section">
+        <div className="container">
+          <div className="product-content">
+            <div className="product-info">
+              <h2>{translations[language].products.whatIsTitle}</h2>
+              <p>{translations[language].products.whatIsDesc}</p>
+              <h3>{translations[language].products.coreFeaturesTitle}</h3>
+              <ul className="feature-list">
+                <li>
+                  <strong>{translations[language].products.feature1.split(' - ')[0]}</strong>
+                  <span>{translations[language].products.feature1.includes(' - ') ? translations[language].products.feature1.split(' - ')[1] : ''}</span>
+                </li>
+                <li>
+                  <strong>{translations[language].products.feature2.split(' - ')[0]}</strong>
+                  <span>{translations[language].products.feature2.includes(' - ') ? translations[language].products.feature2.split(' - ')[1] : ''}</span>
+                </li>
+                <li>
+                  <strong>{translations[language].products.feature3.split(' - ')[0]}</strong>
+                  <span>{translations[language].products.feature3.includes(' - ') ? translations[language].products.feature3.split(' - ')[1] : ''}</span>
+                </li>
+                <li>
+                  <strong>{translations[language].products.feature4.split(' - ')[0]}</strong>
+                  <span>{translations[language].products.feature4.includes(' - ') ? translations[language].products.feature4.split(' - ')[1] : ''}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -74,18 +74,22 @@ const About = () => {
           <h2 className="section-title">{t.valuesTitle}</h2>
           <div className="values-list">
             <div className="value-item">
+              <div className="value-icon">🙏</div>
               <h4>{t.value1Title}</h4>
               <p>{t.value1Desc}</p>
             </div>
             <div className="value-item">
+              <div className="value-icon">🤝</div>
               <h4>{t.value2Title}</h4>
               <p>{t.value2Desc}</p>
             </div>
             <div className="value-item">
+              <div className="value-icon">🔗</div>
               <h4>{t.value3Title}</h4>
               <p>{t.value3Desc}</p>
             </div>
             <div className="value-item">
+              <div className="value-icon">✨</div>
               <h4>{t.value4Title}</h4>
               <p>{t.value4Desc}</p>
             </div>
