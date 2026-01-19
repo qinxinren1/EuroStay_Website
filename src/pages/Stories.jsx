@@ -165,8 +165,8 @@ const Stories = () => {
 
       <section className="stories-section">
         <div className="container">
+          <h1 className="stories-main-title">{t.storiesTagline}</h1>
           <h2 className="section-title">{t.userStoriesTitle}</h2>
-          <p className="stories-tagline">{t.storiesTagline}</p>
           
           <div className="stories-map-gallery-layout">
             <div className="stories-map-container">
