@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="footer-section footer-left">
           <div className="footer-logo-container">
             <img 
-              src="/images/globe/logo_footer.png" 
+              src={`${import.meta.env.BASE_URL}images/globe/logo_footer.png`} 
               alt="EuroStay Logo" 
               className="footer-logo-image"
             />

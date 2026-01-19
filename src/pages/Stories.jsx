@@ -134,7 +134,12 @@ const Stories = () => {
   return (
     <div className="stories-page">
       <section className="stories-hero">
-        <div className="stories-hero-background"></div>
+        <div 
+          className="stories-hero-background"
+          style={{
+            backgroundImage: `url(${import.meta.env.BASE_URL}images/stories/cover.jpeg)`
+          }}
+        ></div>
         <div className="stories-hero-content">
           <div className="stories-hero-text-box">
             <p className="stories-hero-line1">{t.heroLine1}</p>

@@ -129,7 +129,7 @@ const Home = () => {
             <div className="hero-title-wrapper">
               <div className="hero-title-line">
                 <img 
-                  src="/images/globe/title.png" 
+                  src={`${import.meta.env.BASE_URL}images/globe/title.png`} 
                   alt="EURO STAY" 
                   className="hero-title-image"
                 />
