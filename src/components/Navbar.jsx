@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useLanguage } from '../contexts/LanguageContext'
 import { translations } from '../translations'
 import './Navbar.css'
 
 const Navbar = () => {
   const location = useLocation()
+  const navigate = useNavigate()
   const { language, toggleLanguage } = useLanguage()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = translations[language]
@@ -53,6 +54,25 @@ const Navbar = () => {
               aria-label="Toggle language"
             >
               {language === 'zh' ? 'EN' : '中文'}
+            </button>
+          </li>
+          <li>
+            <button
+              className="download-button"
+              onClick={() => {
+                setIsMenuOpen(false)
+                if (location.pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                } else {
+                  navigate('/')
+                  setTimeout(() => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' })
+                  }, 100)
+                }
+              }}
+              aria-label="Download"
+            >
+              {t.nav.download}
             </button>
           </li>
         </ul>

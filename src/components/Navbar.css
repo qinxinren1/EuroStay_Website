@@ -118,6 +118,29 @@
   transform: translateY(-0.2rem);
 }
 
+.download-button {
+  background-color: var(--color-yellow-primary);
+  color: var(--color-white);
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+.download-button:hover {
+  background-color: #FFC84D;
+  transform: translateY(-0.2rem);
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+}
+
 .navbar-toggle {
   display: none;
   flex-direction: column;

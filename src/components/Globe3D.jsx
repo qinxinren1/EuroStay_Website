@@ -2,12 +2,20 @@ import React, { useEffect, useRef, useState } from 'react'
 import Globe from 'globe.gl'
 import './Globe3D.css'
 
-const Globe3D = ({ stories = [], currentIndex = 0, onMarkerClick, hoveredMarker, onMarkerHover }) => {
+const Globe3D = ({ stories = [], currentIndex = 0, onMarkerClick, hoveredMarker, onMarkerHover, countryUserCounts = {}, language = 'zh' }) => {
   const globeEl = useRef(null)
   const [activeCard, setActiveCard] = useState(null)
   const [hoveredCountry, setHoveredCountry] = useState(null)
   const [cardPosition, setCardPosition] = useState({ x: 0, y: 0 })
   const globeRef = useRef(null)
+  const countryUserCountsRef = useRef(countryUserCounts)
+  const languageRef = useRef(language)
+
+  // 更新 ref 以保持最新值
+  useEffect(() => {
+    countryUserCountsRef.current = countryUserCounts
+    languageRef.current = language
+  }, [countryUserCounts, language])
 
   // Theme colors
   const purplePrimary = '#7A63C7'
@@ -109,7 +117,7 @@ const Globe3D = ({ stories = [], currentIndex = 0, onMarkerClick, hoveredMarker,
     const world = Globe()(globeEl.current)
       .globeImageUrl('//cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg')
       .backgroundColor('#ffffff') // White background
-      .pointOfView({ lat: 50, lng: 10, altitude: 2.2 }, 0) // Focus on Europe, smaller initial view
+      .pointOfView({ lat: 50, lng: 10, altitude: 2.0 }, 0) // Focus on Europe, larger initial view
       .lineHoverPrecision(0)
       .enablePointerInteraction(true)
 
@@ -207,26 +215,16 @@ const Globe3D = ({ stories = [], currentIndex = 0, onMarkerClick, hoveredMarker,
               return hasStories ? 'rgba(122, 99, 199, 0.4)' : 'rgba(150, 150, 180, 0.25)'
             })
             
-            // Show card for countries with stories
+            // Show card for all countries with user count data
             if (hoverD && hoverD.properties) {
               const isoCode = hoverD.properties.ISO_A2
-              if (isoCode && countriesWithStories.has(isoCode)) {
-                // Find the first story for this country
-                const countryStory = stories.find((story, index) => {
-                  const location = story.location.toLowerCase()
-                  if (isoCode === 'FR') return location.includes('paris') || location.includes('法国')
-                  if (isoCode === 'ES') return location.includes('barcelona') || location.includes('西班牙')
-                  if (isoCode === 'NL') return location.includes('amsterdam') || location.includes('荷兰')
-                  return false
+              if (isoCode) {
+                const userCount = countryUserCountsRef.current[isoCode] || 0
+                setHoveredCountry({
+                  isoCode,
+                  name: hoverD.properties.ADMIN,
+                  userCount
                 })
-                if (countryStory) {
-                  const storyIndex = stories.indexOf(countryStory)
-                  setHoveredCountry({
-                    isoCode,
-                    name: hoverD.properties.ADMIN,
-                    storyIndex
-                  })
-                }
               } else {
                 setHoveredCountry(null)
               }
@@ -401,7 +399,7 @@ const Globe3D = ({ stories = [], currentIndex = 0, onMarkerClick, hoveredMarker,
         </div>
       )}
       {/* Card for country hover */}
-      {hoveredCountry !== null && stories[hoveredCountry.storyIndex] && (
+      {hoveredCountry !== null && (
         <div
           className="globe-card"
           style={{
@@ -425,28 +423,20 @@ const Globe3D = ({ stories = [], currentIndex = 0, onMarkerClick, hoveredMarker,
                 ×
               </button>
             </div>
-            <div className="globe-card-author">
-              <div className="globe-card-avatar">
-                {stories[hoveredCountry.storyIndex].author[0]}
-              </div>
-              <div>
-                <div className="globe-card-author-name">{stories[hoveredCountry.storyIndex].author}</div>
-                <div className="globe-card-date">{stories[hoveredCountry.storyIndex].date}</div>
-              </div>
+            <div className="globe-card-user-count">
+              {hoveredCountry.userCount > 0 ? (
+                <>
+                  <div className="globe-card-count-number">{hoveredCountry.userCount.toLocaleString()}</div>
+                  <div className="globe-card-count-label">
+                    {language === 'zh' ? '用户' : 'Users'}
+                  </div>
+                </>
+              ) : (
+                <div className="globe-card-count-label">
+                  {language === 'zh' ? '暂无用户，等你加入' : 'No Users Yet，Join Us'}
+                </div>
+              )}
             </div>
-            <h3 className="globe-card-title">{stories[hoveredCountry.storyIndex].title}</h3>
-            <p className="globe-card-content-text">{stories[hoveredCountry.storyIndex].content}</p>
-            <button
-              className="globe-card-action"
-              onClick={() => {
-                if (onMarkerClick) {
-                  onMarkerClick(hoveredCountry.storyIndex)
-                }
-                setHoveredCountry(null)
-              }}
-            >
-              查看详情 →
-            </button>
           </div>
         </div>
       )}

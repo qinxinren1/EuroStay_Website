@@ -8,6 +8,8 @@ html {
   font-size: 62.5%; /* 1rem = 10px */
   overflow-x: hidden;
   width: 100%;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
 }
 
 :root {
@@ -34,6 +36,8 @@ body {
   font-size: 1.6rem; /* 16px 基础字体 */
   overflow-x: hidden;
   width: 100%;
+  touch-action: manipulation;
+  -ms-touch-action: manipulation;
 }
 
 #root {
